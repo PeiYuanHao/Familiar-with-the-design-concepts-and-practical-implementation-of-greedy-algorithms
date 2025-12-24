@@ -10,7 +10,10 @@ int job_start[N];  // 记录每个作业的开始时间
 
 void quick_sort(int v[], int l, int r)
 {
-    if (l >= r) return;
+    if (l >= r)
+    {
+        return ;
+    }
     
     int random_number = l + rand() % (r - l + 1);
     int x = v[random_number];
@@ -18,9 +21,20 @@ void quick_sort(int v[], int l, int r)
     
     while (i < j)
     {
-        do i++; while (v[i] < x);
-        do j--; while (v[j] > x);
-        if (i < j) swap(v[i], v[j]);
+        do
+        {
+            i ++ ;
+        } 
+        while (v[i] < x);
+        do
+        {
+            j -- ;
+        } 
+        while (v[j] > x);
+        if (i < j)
+        {
+            swap(v[i], v[j]);
+        }
     }
     
     quick_sort(v, l, j);
